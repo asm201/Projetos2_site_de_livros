@@ -12,9 +12,12 @@ import { MensagemComponent } from './components/mensagem/mensagem.component';
 import { MaiorIdadeDirective } from './directives/maior-idade.directive';
 import { ValidandoCepDirective } from './directives/validando-cep.directive';
 import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
+import { LoginComponent } from './login/login.component';
+import { CadastroLivroComponent } from './cadastro-livro/cadastro-livro.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, CadastroComponent, SucessoCadastroComponent, MensagemComponent, MaiorIdadeDirective, ValidandoCepDirective, TelaInicialComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, CadastroComponent, SucessoCadastroComponent, MensagemComponent, MaiorIdadeDirective, ValidandoCepDirective, TelaInicialComponent, LoginComponent, CadastroLivroComponent, SobreNosComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

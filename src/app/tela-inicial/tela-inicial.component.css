@@ -1,0 +1,45 @@
+.introducao{
+    background-color:  var(--azul);
+    text-align: center;
+    margin: 0.5em 0;
+    padding: 10em 0;
+}
+
+.introducao__titulo{
+    color: var(--branco);
+    font-family: var(--fonte-principal);
+    font-weight: 300;
+    font-size: 4.5em;
+    margin-bottom: 0.5em;
+}
+
+.introducao__subtitulo{
+    color: var(--cinza-claro);
+    font-family: var(--fonte-secundaria);
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.botoes{
+    display: flex;
+    justify-content:center;
+}
+.btn{
+    background-color: var(--laranja);
+    padding: 1.5em 3em;
+    margin: 1em 4em;
+    color: var(--branco);
+    font-weight: 700;
+    font-size: 1em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (min-width: 1728px) {
+
+}

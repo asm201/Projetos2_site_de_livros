@@ -3,8 +3,15 @@ hr {
 }
 
 .rodapé {
+  border-top: 1px solid var(--azul);
   background-color: var(--branco);
   padding: 1em;
+  margin: 1em 0;
+}
+
+
+.lista-rodapé_curso {
+  display: none;
 }
 
 .lista-rodapé {
@@ -14,11 +21,18 @@ hr {
 @media screen and (min-width: 1024px) {
   .rodapé {
       display: flex;
-      justify-content: space-around;
+      justify-content:space-evenly;
+  }
+
+  .lista-rodapé_curso {
+    display: block;
+    margin-top: 2.5em;
+    padding-right: 12em;
   }
 
   .lista-rodapé {
       display: block;
+      padding-right: 5em;
   }
 
   .lista-rodapé__item {
@@ -33,6 +47,11 @@ hr {
       margin-left: 0.6em;
   }
 
+  .lista-rodapé__titulo_curso {
+    font-size: 14px;
+    color: var(--cinza-claro);
+}
+
   .lista-rodapé__titulo {
       font-size: 14px;
       color: var(--cinza-claro);
@@ -44,6 +63,7 @@ hr {
 }
 
 @media screen and (min-width: 1728px) {
+
   .lista-rodapé {
       border-left: 1px solid var(--cinza-claro);
       padding-left: 1em;

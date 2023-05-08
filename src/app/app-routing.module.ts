@@ -1,14 +1,18 @@
 import { SucessoCadastroComponent } from './sucesso-cadastro/sucesso-cadastro.component';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
+import { LoginComponent } from './login/login.component';
+import { CadastroLivroComponent } from './cadastro-livro/cadastro-livro.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'cadastro',
+    redirectTo: 'home',
   },
   {
     path: 'cadastro',
@@ -18,6 +22,24 @@ const routes: Routes = [
     path: 'sucesso',
     component: SucessoCadastroComponent
   },
+  {
+    path: 'home',
+    component: TelaInicialComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'cadastro_livro',
+    component: CadastroLivroComponent
+  },
+  {
+    path: 'sobre_nos',
+    component: SobreNosComponent
+  }
+  
+  
 ];
 
 @NgModule({
