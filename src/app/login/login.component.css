@@ -1,0 +1,30 @@
+.principal {
+    padding: 8em 0 10em 0;
+    text-align: center;
+    background-color: var(--azul);
+}
+
+.principal__titulo {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--laranja)
+}
+
+.campo__etiqueta {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--branco);
+    margin-left: 1em;
+}
+
+.campo__escrita {
+    margin-bottom: 1.5em;
+    border: 1px solid var(--azul);
+    border-radius: 24px;
+    padding: 1em;
+    width: 40%;
+}
+    

@@ -1,8 +1,7 @@
 .introducao{
     background-color:  var(--azul);
     text-align: center;
-    margin: 0.5em 0;
-    padding: 10em 0;
+    padding: 11em 0;
 }
 
 .introducao__titulo{
