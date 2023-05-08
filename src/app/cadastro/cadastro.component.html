@@ -125,8 +125,17 @@
           <app-mensagem *ngIf="uf?.errors?.['required']" mensagem="O campo de estado deve ser preenchido!"></app-mensagem>
         </div>
       </div>
-
     </div>
+    <h3 class="principal__subtitulo">Crie Sua Senha</h3>
+    <div class="formulario__campo">
+      <label class="campo__etiqueta" for="senha">Senha</label>
+      <input name="senha" id="senha" class="campo__escrita" ngModel required #senha="ngModel">
+    </div>
+    <div class="formulario__campo">
+      <label class="campo__etiqueta" for="senha_confrimacao">Confirma sua senha</label>
+      <input name="senha_confrimacao" id="senha_confrimacao" class="campo__escrita" ngModel required #senha_confrimacao="ngModel">
+    </div>
+    <br>
     <button type="submit" class="formulario__botao">Enviar formulário</button>
     </form>
     <br>
