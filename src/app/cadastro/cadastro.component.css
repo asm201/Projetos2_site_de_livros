@@ -44,7 +44,7 @@
 
 .formulario__botao {
   background: var(--laranja);
-  padding: 1em 4em;
+  padding: 1em 1em;
   font-weight: 700;
   font-size: 20px;
   line-height: 30px;
@@ -81,6 +81,12 @@
 }
 
 .link__login{
-  font-size: 1.3em;
+  font-size: 1em;
   text-decoration: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .formulario__botao {
+    padding: 1em 4em;
+  }
 }
