@@ -1,0 +1,86 @@
+.sobre-site{
+    background-color:  var(--azul);
+    text-align: left;
+    padding: 6em 2em;
+}
+
+.sobre-site__titulo{
+    color: var(--laranja);
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+}
+
+.tobre-site__texto{
+    color: white;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+.sobre-nos{
+    text-align:right;
+    padding: 6em 2em;
+}
+
+.sobre-nos__titulo{
+    color: var(--laranja);
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+}
+
+.sobre-nos__texto{
+
+    font-family: var(--fonte-secundaria);
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+.integrantes{
+    background-color:  var(--azul);
+    text-align: center;
+    padding: 6em 2em;
+}
+
+.integrantes__titulo{
+    color: var(--laranja);
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+}
+
+.integrantes__texto{
+    color: white;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .introducao__titulo{
+        color: var(--branco);
+        font-family: var(--fonte-principal);
+        font-weight: 300;
+        font-size: 4.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    .introducao__subtitulo{
+        color: var(--cinza-claro);
+        font-family: var(--fonte-secundaria);
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+
+    .btn{
+        padding: 1.5em 3em;
+        margin: 1em 4em;
+    }
+}

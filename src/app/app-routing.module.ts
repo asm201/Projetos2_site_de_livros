@@ -4,8 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { TelaInicialComponent } from './tela-inicial/tela-inicial.component';
 import { LoginComponent } from './login/login.component';
-import { CadastroLivroComponent } from './cadastro-livro/cadastro-livro.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { CadastraLivroComponent } from './livros/cadastra-livro/cadastra-livro.component';
 
 
 const routes: Routes = [
@@ -31,12 +31,12 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'cadastro_livro',
-    component: CadastroLivroComponent
-  },
-  {
     path: 'sobre_nos',
     component: SobreNosComponent
+  },
+  {
+    path: 'cadastra_livro',
+    component: CadastraLivroComponent
   }
   
   

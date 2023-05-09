@@ -2,16 +2,16 @@
     <h2 class="principal__titulo">Faça seu login</h2>
     <br>
     <br>
-    <div class="formulario__campo">
-      <label class="campo__etiqueta" for="email">Email:</label>
-      <input name="email" id="email" class="campo__escrita" ngModel required #email="ngModel">
-    </div>
-    <div class="formulario__campo">
+    <form class="principal__formulario" id="formulario" #f="ngForm">
+      <div class="formulario__campo">
+        <label class="campo__etiqueta" for="email">Email:</label>
+        <input name="email" id="email" class="campo__escrita" ngModel required #email="ngModel">
+      </div>
+      <div class="formulario__campo">
         <label class="campo__etiqueta" for="senha">Senha:</label>
         <input name="senha" id="senha" class="campo__escrita" ngModel required #senha="ngModel">
       </div>
-
-    <form class="principal__formulario" id="formulario" #f="ngForm">
-
+        <br>
+        <button type="submit" class="login__botao">Login</button>
     </form>
   </main>

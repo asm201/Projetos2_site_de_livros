@@ -1,5 +1,5 @@
 .principal {
-    padding: 8em 0 10em 0;
+    padding: 7em 0 7em 0;
     text-align: center;
     background-color: var(--azul);
 }
@@ -27,4 +27,15 @@
     padding: 1em;
     width: 40%;
 }
+
+.login__botao {
+    background: var(--laranja);
+    padding:1em 2.5em;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    border: none;
+    color: var(--branco);
+    cursor: pointer;
+  }
     
