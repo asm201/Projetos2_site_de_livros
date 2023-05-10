@@ -17,9 +17,12 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { LivroComponent } from './livros/livro/livro.component';
 import { CadastraLivroComponent } from './livros/cadastra-livro/cadastra-livro.component';
 import { ListarLivrosComponent } from './livros/listar-livros/listar-livros.component';
+import { EditarLivroComponent } from './livros/editar-livro/editar-livro.component';
+import { DeletarLivroComponent } from './livros/deletar-livro/deletar-livro.component';
+import { PerfilComponent } from './usuario/perfil/perfil.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, CadastroComponent, SucessoCadastroComponent, MensagemComponent, MaiorIdadeDirective, ValidandoCepDirective, TelaInicialComponent, LoginComponent, SobreNosComponent, LivroComponent, CadastraLivroComponent, ListarLivrosComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, CadastroComponent, SucessoCadastroComponent, MensagemComponent, MaiorIdadeDirective, ValidandoCepDirective, TelaInicialComponent, LoginComponent, SobreNosComponent, LivroComponent, CadastraLivroComponent, ListarLivrosComponent, EditarLivroComponent, DeletarLivroComponent, PerfilComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
