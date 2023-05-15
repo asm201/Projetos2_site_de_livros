@@ -1,3 +1,6 @@
+create database IfBooks;
+use IfBooks;
+
 -- Tabela User
 CREATE TABLE USUARIO (
     BD_EMAIL VARCHAR(150) PRIMARY KEY,
