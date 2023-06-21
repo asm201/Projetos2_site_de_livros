@@ -69,6 +69,16 @@
           </div>
         </div>
       </div>
+
+      <div class="formulario__campo">
+        <label class="campo__etiqueta" for="arquivos">Imagem da Capa</label>
+        <input type="file" name="arquivos" class="imagem__arquivo"  accept="image/png, image/jpeg" ngModel required #arquivos="ngModel"/> 
+        <div *ngIf="(arquivos?.invalid && arquivos?.touched) || arquivos?.dirty">
+          <app-mensagem *ngIf="arquivos?.errors?.['required']" mensagem="O campo arquivos deve ser preenchido!"></app-mensagem>
+        </div>
+      </div>
+
+
       <br>
       <button type="submit" class="formulario__botao">Enviar formulário</button>
       </form>

@@ -16,7 +16,6 @@
             <input name="autoria" id="autoria" type="text" class="campo__escrita" ngModel required maiorIdadeValidator #autoria="ngModel"/>
             <div *ngIf="(autoria?.invalid && autoria?.touched) || autoria?.dirty">
               <app-mensagem *ngIf="autoria?.errors?.['required']" mensagem="O campo de data de autoria deve ser preenchido!"></app-mensagem>
-              <app-mensagem *ngIf="autoria?.errors?.['maiorIdadeValidator'] && !autoria?.errors?.['required']" mensagem="O usuário deve ser maior de 18 anos!"></app-mensagem>
             </div>
           </div>
       <div class="formulario__dupla">
@@ -25,7 +24,6 @@
           <input name="editora" id="editora" type="text" class="campo__escrita" ngModel required maiorIdadeValidator #editora="ngModel"/>
           <div *ngIf="(editora?.invalid && editora?.touched) || editora?.dirty">
             <app-mensagem *ngIf="editora?.errors?.['required']" mensagem="O campo de data de editora deve ser preenchido!"></app-mensagem>
-            <app-mensagem *ngIf="editora?.errors?.['maiorIdadeValidator'] && !editora?.errors?.['required']" mensagem="O usuário deve ser maior de 18 anos!"></app-mensagem>
           </div>
         </div>
         <div class="formulario__campo">
@@ -33,7 +31,6 @@
             <input name="lancamento" id="lancamento" type="date" class="campo__escrita" ngModel required maiorIdadeValidator #lancamento="ngModel"/>
             <div *ngIf="(lancamento?.invalid && lancamento?.touched) || lancamento?.dirty">
               <app-mensagem *ngIf="lancamento?.errors?.['required']" mensagem="O campo de data de lançamento deve ser preenchido!"></app-mensagem>
-              <app-mensagem *ngIf="lancamento?.errors?.['maiorIdadeValidator'] && !lancamento?.errors?.['required']" mensagem="O usuário deve ser maior de 18 anos!"></app-mensagem>
             </div>
           </div>
       </div>
@@ -69,6 +66,15 @@
           </div>
         </div>
       </div>
+      <div class="formulario__campo">
+        <label class="campo__etiqueta" for="arquivos">Imagem da Capa</label>
+        <input type="file" name="arquivos" class="imagem__arquivo"  accept="image/png, image/jpeg" ngModel required #arquivos="ngModel"/> 
+        <div *ngIf="(arquivos?.invalid && arquivos?.touched) || arquivos?.dirty">
+          <app-mensagem *ngIf="arquivos?.errors?.['required']" mensagem="O campo arquivos deve ser preenchido!"></app-mensagem>
+        </div>
+      </div>
+
+      
       <br>
       <button type="submit" class="formulario__botao">Enviar formulário</button>
       </form>

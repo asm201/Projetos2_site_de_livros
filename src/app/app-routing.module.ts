@@ -8,6 +8,7 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { CadastraLivroComponent } from './livros/cadastra-livro/cadastra-livro.component';
 import { ListarLivrosComponent } from './livros/listar-livros/listar-livros.component';
 import { EditarLivroComponent } from './livros/editar-livro/editar-livro.component';
+import { PerfilComponent } from './usuario/perfil/perfil.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'editar_livro',
     component: EditarLivroComponent
+  },
+  {
+    path: 'usuario',
+    component: PerfilComponent
   }
   
   
