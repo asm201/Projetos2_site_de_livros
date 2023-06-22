@@ -1,0 +1,71 @@
+[
+  {
+    "BD_EMAIL": "aminhamae@gmail.com",
+    "BD_NOMECOMPLETO": "",
+    "BD_NASCIMENTO": "",
+    "BD_CELULAR": 0,
+    "BD_SENHA": "",
+    "BD_CEP": "",
+    "BD_ENDERECO": "",
+    "BD_NUMERO": 0,
+    "BD_COMPLEMENTO": "",
+    "BD_BAIRRO": "",
+    "BD_CIDADE": "",
+    "BD_UF": ""
+  },
+  {
+    "BD_EMAIL": "aminhama@gmail.com",
+    "BD_NOMECOMPLETO": "",
+    "BD_NASCIMENTO": "",
+    "BD_CELULAR": 0,
+    "BD_SENHA": "",
+    "BD_CEP": "",
+    "BD_ENDERECO": "",
+    "BD_NUMERO": 0,
+    "BD_COMPLEMENTO": "",
+    "BD_BAIRRO": "",
+    "BD_CIDADE": "",
+    "BD_UF": ""
+  },
+  {
+    "BD_EMAIL": "",
+    "BD_NOMECOMPLETO": "",
+    "BD_NASCIMENTO": "",
+    "BD_CELULAR": 0,
+    "BD_SENHA": "",
+    "BD_CEP": "",
+    "BD_ENDERECO": "",
+    "BD_NUMERO": 0,
+    "BD_COMPLEMENTO": "",
+    "BD_BAIRRO": "lala",
+    "BD_CIDADE": "",
+    "BD_UF": ""
+  },
+  {
+    "BD_EMAIL": "",
+    "BD_NOMECOMPLETO": "",
+    "BD_NASCIMENTO": "",
+    "BD_CELULAR": 0,
+    "BD_SENHA": "",
+    "BD_CEP": "",
+    "BD_ENDERECO": "",
+    "BD_NUMERO": 0,
+    "BD_COMPLEMENTO": "",
+    "BD_BAIRRO": "lala",
+    "BD_CIDADE": "",
+    "BD_UF": ""
+  },
+  {
+    "BD_NOMECOMPLETO": "lala",
+    "BD_NASCIMENTO": "",
+    "BD_CELULAR": 0,
+    "BD_SENHA": "",
+    "BD_CEP": "",
+    "BD_ENDERECO": "",
+    "BD_NUMERO": 0,
+    "BD_COMPLEMENTO": "",
+    "BD_BAIRRO": "",
+    "BD_CIDADE": "",
+    "BD_UF": ""
+  }
+]

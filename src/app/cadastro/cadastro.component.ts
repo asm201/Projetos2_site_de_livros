@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm, NgModel} from '@angular/forms'
 import { ConsultaCepService } from '../service/consulta-cep.service';
 
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -42,6 +43,7 @@ export class CadastroComponent implements OnInit {
       estado: dados.uf
     })
   }
+
 }
 
 

@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "BD_NOME": "Siste Gay",
+    "BD_EDITORA": "",
+    "BD_AUTORA": "",
+    "BD_MATERIA": "",
+    "BD_EMAIL_USUARIO": "",
+    "BD_TROCA": false,
+    "BD_DOACAO": false,
+    "BD_ANOLANCAMENTO": 0
+  },
+  {
+    "id": 2,
+    "BD_NOME": "Siste Gay",
+    "BD_EDITORA": "",
+    "BD_AUTORA": "",
+    "BD_MATERIA": "",
+    "BD_EMAIL_USUARIO": "",
+    "BD_TROCA": false,
+    "BD_DOACAO": false,
+    "BD_ANOLANCAMENTO": 0
+  },
+  {
+    "id": 3,
+    "BD_NOME": "Siste Gay",
+    "BD_EDITORA": "",
+    "BD_AUTORA": "",
+    "BD_MATERIA": "",
+    "BD_EMAIL_USUARIO": "",
+    "BD_TROCA": false,
+    "BD_DOACAO": false,
+    "BD_ANOLANCAMENTO": 0
+  }
+]
