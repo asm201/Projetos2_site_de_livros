@@ -12,9 +12,26 @@
 <section class="container">
     <div class="adicionar__livro"><button type="button" class="formulario__botao" routerLink="/cadastra_livro">Adicionar Livro</button></div>
     <div class="mural">
-      <app-livro></app-livro>
-      <app-livro></app-livro>
-      <app-livro></app-livro>
-      <app-livro></app-livro>
+        <div class="card">
+            <!-- 1ª linha -->
+            <div class="card__descricao">
+                <!-- 1ª coluna -->
+                <div class="descricao">
+                    <h3 class="descricao__titulo">nome do livro</h3>
+                    <h2 class="descricao__titulo-livro">autor</h2>
+                    <p class="descricao__texto">descrição fgsgggerg agsgf</p>
+                    <p class="descricao__texto">descrição</p>
+                </div>
+                <!-- 2ª coluna -->
+                <img class="descricao__imagem" src="../../../assets/img/ApacheKafka.png">
+            </div>
+            <!-- 2ª linha -->
+            <div class="card__botoes">
+                <!-- 1ª coluna -->
+                <!-- 2ª coluna -->
+                <a href="#" class="botoes__ancora">Alugar</a>
+                <a href="#" class="botoes__ancora">Pedir Doação</a>
+            </div>
+        </div>
     </div>
 </section>
