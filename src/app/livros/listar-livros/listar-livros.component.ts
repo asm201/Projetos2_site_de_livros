@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { remult } from 'remult';
+import { Livros } from 'src/Shared/Livros';
 
 @Component({
   selector: 'app-listar-livros',
@@ -9,7 +11,11 @@ export class ListarLivrosComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  livros: Livros[] = []
+  livroRepo = remult.repo(Livros)
+  ngOnInit(){
+    const teste = this.livroRepo.find().then((livros)=> (this.livros = livros))
+    console.log(teste)
   }
 
 }

@@ -12,7 +12,7 @@ export class Usuario {
     BD_NOMECOMPLETO = '';
     @Fields.date()
     BD_NASCIMENTO = '';
-    @Fields.number()
+    @Fields.string()
     BD_CELULAR = 0;
     @Fields.string()
     BD_SENHA = '';
@@ -20,7 +20,7 @@ export class Usuario {
     BD_CEP = '';
     @Fields.string()
     BD_ENDERECO = '';
-    @Fields.number()
+    @Fields.string()
     BD_NUMERO = 0;
     @Fields.string()
     BD_COMPLEMENTO = '';

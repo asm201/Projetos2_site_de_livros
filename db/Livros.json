@@ -2,19 +2,19 @@
   {
     "id": 1,
     "BD_NOME": "Siste Gay",
-    "BD_EDITORA": "",
-    "BD_AUTORA": "",
-    "BD_MATERIA": "",
+    "BD_EDITORA": "Gay Siste",
+    "BD_AUTORA": "Andreia Porra",
+    "BD_MATERIA": "Programação",
     "BD_EMAIL_USUARIO": "",
     "BD_TROCA": false,
     "BD_DOACAO": false,
-    "BD_ANOLANCAMENTO": 0
+    "BD_ANOLANCAMENTO": 2000
   },
   {
     "id": 2,
     "BD_NOME": "Siste Gay",
     "BD_EDITORA": "",
-    "BD_AUTORA": "",
+    "BD_AUTORA": "Andreia Porra",
     "BD_MATERIA": "",
     "BD_EMAIL_USUARIO": "",
     "BD_TROCA": false,
@@ -24,8 +24,8 @@
   {
     "id": 3,
     "BD_NOME": "Siste Gay",
-    "BD_EDITORA": "",
-    "BD_AUTORA": "",
+    "BD_EDITORA": "Andreia Porra",
+    "BD_AUTORA": "Andreia Porra",
     "BD_MATERIA": "",
     "BD_EMAIL_USUARIO": "",
     "BD_TROCA": false,
