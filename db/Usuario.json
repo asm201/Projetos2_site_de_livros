@@ -66,6 +66,21 @@
     "BD_COMPLEMENTO": "",
     "BD_BAIRRO": "",
     "BD_CIDADE": "",
-    "BD_UF": ""
+    "BD_UF": "",
+    "BD_EMAIL": ""
+  },
+  {
+    "BD_EMAIL": "asirikaku2000@gmail.com",
+    "BD_NOMECOMPLETO": "André Sirikaku",
+    "BD_NASCIMENTO": "2000-05-03T00:00:00.000Z",
+    "BD_CELULAR": "11975465912",
+    "BD_SENHA": "123123",
+    "BD_CEP": "04026090",
+    "BD_ENDERECO": "Rua José de Magalhães",
+    "BD_NUMERO": "373",
+    "BD_COMPLEMENTO": "201",
+    "BD_BAIRRO": "Vila Clementino",
+    "BD_CIDADE": "São Paulo",
+    "BD_UF": "SP"
   }
 ]

@@ -13,7 +13,7 @@ export class Usuario {
     @Fields.date()
     BD_NASCIMENTO = '';
     @Fields.string()
-    BD_CELULAR = 0;
+    BD_CELULAR = '';
     @Fields.string()
     BD_SENHA = '';
     @Fields.string()
@@ -21,7 +21,7 @@ export class Usuario {
     @Fields.string()
     BD_ENDERECO = '';
     @Fields.string()
-    BD_NUMERO = 0;
+    BD_NUMERO = '';
     @Fields.string()
     BD_COMPLEMENTO = '';
     @Fields.string()

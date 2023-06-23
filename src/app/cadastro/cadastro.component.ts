@@ -16,7 +16,7 @@ export class CadastroComponent implements OnInit {
   constructor(private router: Router, private consultaCepService: ConsultaCepService) { }
 
   FE_novoNome = ''
-  FE_novoNascimento = null
+  FE_novoNascimento = ''
   FE_novoCelular = ''
   FE_novoEmail = ''
   FE_novoCep = ''
@@ -34,14 +34,24 @@ export class CadastroComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-
   async cadastrar(form: NgForm){
     if(form.valid){
       try {
-        const novoUsuario = this.usuarioRepo.insert({
-
+        const novoUsuario = await this.usuarioRepo.insert({
+          BD_NOMECOMPLETO: this.FE_novoNome,
+          BD_NASCIMENTO: this.FE_novoNascimento,
+          BD_CELULAR: this.FE_novoCelular,
+          BD_EMAIL: this.FE_novoEmail,
+          BD_CEP: this.FE_novoCep,
+          BD_ENDERECO: this.FE_novoEndereco,
+          BD_NUMERO: this.FE_novoNumero,
+          BD_COMPLEMENTO: this.FE_novoComplemento,
+          BD_BAIRRO: this.FE_novoBairro,
+          BD_CIDADE: this.FE_novoCidade,
+          BD_UF: this.FE_novoEstado,
+          BD_SENHA: this.FE_novoSenha
         })
+        this.usuarios.push(novoUsuario)
       } catch (error:any) {
         alert(error.mensage)
       }
