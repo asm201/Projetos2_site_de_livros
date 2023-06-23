@@ -20,6 +20,7 @@ import { EditarLivroComponent } from './livros/editar-livro/editar-livro.compone
 import { DeletarLivroComponent } from './livros/deletar-livro/deletar-livro.component';
 import { PerfilComponent } from './usuario/perfil/perfil.component';
 
+
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent, CadastroComponent, SucessoCadastroComponent, MensagemComponent, MaiorIdadeDirective, ValidandoCepDirective, TelaInicialComponent, LoginComponent, SobreNosComponent, CadastraLivroComponent, ListarLivrosComponent, EditarLivroComponent, DeletarLivroComponent, PerfilComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
