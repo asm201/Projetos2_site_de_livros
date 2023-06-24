@@ -96,10 +96,18 @@
 
 .botoes__ancora{
   background-color: var(--laranja);
+  border: 0;
   padding: 1em 2.2em;
   color: var(--branco);
   font-weight: 700;
   text-decoration: none;
+}
+
+.btn{
+  font-size: 100%;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1024px) {

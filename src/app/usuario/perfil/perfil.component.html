@@ -30,7 +30,7 @@
                 <!-- 1ª coluna -->
                 <!-- 2ª coluna -->
                 <a routerLink="/editar_livro/{{livro.id}}" class="botoes__ancora">Editar</a>
-                <a href="#" class="botoes__ancora">Deletar</a>
+                <button type="button" class="botoes__ancora btn" (click)="deletar(livro)">Deletar</button>
             </div>
         </div>
     </div>
