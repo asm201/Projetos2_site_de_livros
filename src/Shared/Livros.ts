@@ -22,6 +22,8 @@ export class Livros {
     BD_TROCA = false;
     @Fields.boolean()
     BD_DOACAO = false;
-    @Fields.integer()
+    @Fields.string()
     BD_ANOLANCAMENTO = '';
+    @Fields.string()
+    BD_CAPA = '';
 }

@@ -5,7 +5,7 @@
       <h3 class="principal__subtitulo">Dados do Livro</h3>
         <div class="formulario__campo">
             <label class="campo__etiqueta" for="nomeLivro">Nome do livro</label>
-            <input name="nomeLivro" id="nomeLivro" class="campo__escrita" ngModel required minlength="2" #nomeLivro="ngModel">
+            <input name="nomeLivro" id="nomeLivro" class="campo__escrita" ngModel required minlength="2" #nomeLivro="ngModel" [(ngModel)]="FE_novoNomeLivro">
             <div *ngIf="(nomeLivro?.invalid && nomeLivro?.touched) || nomeLivro?.dirty">
               <app-mensagem *ngIf="nomeLivro?.errors?.['required']" mensagem="O campo de nomeLivro deve ser preenchido!"></app-mensagem>
               <app-mensagem *ngIf="nomeLivro?.errors?.['minlength']" mensagem="O nomeLivro deve ter no minimo 2 caracteres!"></app-mensagem>
@@ -13,7 +13,7 @@
         </div>  
           <div class="formulario__campo">
             <label class="campo__etiqueta" for="autoria">Autor(a)</label>
-            <input name="autoria" id="autoria" type="text" class="campo__escrita" ngModel required maiorIdadeValidator #autoria="ngModel"/>
+            <input name="autoria" id="autoria" type="text" class="campo__escrita" ngModel required #autoria="ngModel" [(ngModel)]="FE_novoAutor"/>
             <div *ngIf="(autoria?.invalid && autoria?.touched) || autoria?.dirty">
               <app-mensagem *ngIf="autoria?.errors?.['required']" mensagem="O campo de data de autoria deve ser preenchido!"></app-mensagem>
             </div>
@@ -21,14 +21,14 @@
       <div class="formulario__dupla">
         <div class="formulario__campo">
           <label class="campo__etiqueta" for="editora">Editora</label>
-          <input name="editora" id="editora" type="text" class="campo__escrita" ngModel required maiorIdadeValidator #editora="ngModel"/>
+          <input name="editora" id="editora" type="text" class="campo__escrita" ngModel required #editora="ngModel" [(ngModel)]="FE_novoEditora"/>
           <div *ngIf="(editora?.invalid && editora?.touched) || editora?.dirty">
             <app-mensagem *ngIf="editora?.errors?.['required']" mensagem="O campo de data de editora deve ser preenchido!"></app-mensagem>
           </div>
         </div>
         <div class="formulario__campo">
             <label class="campo__etiqueta" for="lancamento">Data de Lançamento</label>
-            <input name="lancamento" id="lancamento" type="date" class="campo__escrita" ngModel required maiorIdadeValidator #lancamento="ngModel"/>
+            <input name="lancamento" id="lancamento" type="text" class="campo__escrita" ngModel required #lancamento="ngModel" [(ngModel)]="FE_novoAnoLancamento"/>
             <div *ngIf="(lancamento?.invalid && lancamento?.touched) || lancamento?.dirty">
               <app-mensagem *ngIf="lancamento?.errors?.['required']" mensagem="O campo de data de lançamento deve ser preenchido!"></app-mensagem>
             </div>
@@ -38,7 +38,7 @@
       <div class="formulario__dupla">
         <div class="formulario__campo">
             <label class="campo__etiqueta" for="categoria">Categoria do livro</label>
-            <select id="categoria" name="categoria" class="campo__escrita" ngModel required #categoria="ngModel">
+            <select id="categoria" name="categoria" class="campo__escrita" ngModel required #categoria="ngModel" [(ngModel)]="trocaOuDoacao">
               <option value="troca">Troca</option>
               <option value="doacao">Doação</option>
             </select>
@@ -49,7 +49,7 @@
   
         <div class="formulario__campo">
           <label class="campo__etiqueta" for="materia">Matéria do Livro</label>
-          <select id="materia" name="materia" class="campo__escrita" ngModel required #materia="ngModel">
+          <select id="materia" name="materia" class="campo__escrita" ngModel required #materia="ngModel" [(ngModel)]="FE_novoMateria">
             <option value="portugues">Ligua Portuguêsa</option>
             <option value="ingles">Inglês</option>
             <option value="matematica">Matemática</option>
@@ -68,7 +68,7 @@
       </div>
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="arquivos">Imagem da Capa</label>
-        <input type="file" name="arquivos" class="imagem__arquivo"  accept="image/png, image/jpeg" ngModel required #arquivos="ngModel"/> 
+        <input type="file" name="arquivos" class="imagem__arquivo"  accept="image/png, image/jpeg" (change)="handleFileSelect($event)" ngModel required #arquivos="ngModel"/> 
         <div *ngIf="(arquivos?.invalid && arquivos?.touched) || arquivos?.dirty">
           <app-mensagem *ngIf="arquivos?.errors?.['required']" mensagem="O campo arquivos deve ser preenchido!"></app-mensagem>
         </div>

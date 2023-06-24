@@ -9,6 +9,7 @@ import { CadastraLivroComponent } from './livros/cadastra-livro/cadastra-livro.c
 import { ListarLivrosComponent } from './livros/listar-livros/listar-livros.component';
 import { EditarLivroComponent } from './livros/editar-livro/editar-livro.component';
 import { PerfilComponent } from './usuario/perfil/perfil.component';
+import { SucessoCadastroLivroComponent } from './sucesso-cadastro-livro/sucesso-cadastro-livro.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'sucesso',
     component: SucessoCadastroComponent
+  },
+  {
+    path: 'sucesso_livro',
+    component: SucessoCadastroLivroComponent
   },
   {
     path: 'home',
