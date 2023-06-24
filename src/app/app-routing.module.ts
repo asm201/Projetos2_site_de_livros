@@ -51,7 +51,7 @@ const routes: Routes = [
     component: ListarLivrosComponent
   },
   {
-    path: 'editar_livro',
+    path: 'editar_livro/:id',
     component: EditarLivroComponent
   },
   {

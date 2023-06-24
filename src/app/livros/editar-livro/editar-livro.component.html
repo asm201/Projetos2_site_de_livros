@@ -1,11 +1,11 @@
 <main class="principal">
     <h2 class="principal__titulo">Cadsatro do Livro</h2>
   
-    <form class="principal__formulario" id="formulario" #f="ngForm" (ngSubmit)="cadastrar(f)">
+    <form class="principal__formulario" id="formulario" #f="ngForm" (ngSubmit)="salvar(f, livro)" *ngFor="let livro of livros">
       <h3 class="principal__subtitulo">Dados do Livro</h3>
         <div class="formulario__campo">
             <label class="campo__etiqueta" for="nomeLivro">Nome do livro</label>
-            <input name="nomeLivro" id="nomeLivro" class="campo__escrita" ngModel required minlength="2" #nomeLivro="ngModel">
+            <input name="nomeLivro" id="nomeLivro" class="campo__escrita" ngModel required minlength="2" #nomeLivro="ngModel" [(ngModel)]="livro.BD_NOME">
             <div *ngIf="(nomeLivro?.invalid && nomeLivro?.touched) || nomeLivro?.dirty">
               <app-mensagem *ngIf="nomeLivro?.errors?.['required']" mensagem="O campo de nomeLivro deve ser preenchido!"></app-mensagem>
               <app-mensagem *ngIf="nomeLivro?.errors?.['minlength']" mensagem="O nomeLivro deve ter no minimo 2 caracteres!"></app-mensagem>
@@ -13,27 +13,24 @@
         </div>  
           <div class="formulario__campo">
             <label class="campo__etiqueta" for="autoria">Autor(a)</label>
-            <input name="autoria" id="autoria" type="text" class="campo__escrita" ngModel required maiorIdadeValidator #autoria="ngModel"/>
+            <input name="autoria" id="autoria" type="text" class="campo__escrita" ngModel required #autoria="ngModel" [(ngModel)]="livro.BD_AUTORA"/>
             <div *ngIf="(autoria?.invalid && autoria?.touched) || autoria?.dirty">
               <app-mensagem *ngIf="autoria?.errors?.['required']" mensagem="O campo de data de autoria deve ser preenchido!"></app-mensagem>
-              <app-mensagem *ngIf="autoria?.errors?.['maiorIdadeValidator'] && !autoria?.errors?.['required']" mensagem="O usuário deve ser maior de 18 anos!"></app-mensagem>
             </div>
           </div>
       <div class="formulario__dupla">
         <div class="formulario__campo">
           <label class="campo__etiqueta" for="editora">Editora</label>
-          <input name="editora" id="editora" type="text" class="campo__escrita" ngModel required maiorIdadeValidator #editora="ngModel"/>
+          <input name="editora" id="editora" type="text" class="campo__escrita" ngModel required #editora="ngModel" [(ngModel)]="livro.BD_EDITORA"/>
           <div *ngIf="(editora?.invalid && editora?.touched) || editora?.dirty">
             <app-mensagem *ngIf="editora?.errors?.['required']" mensagem="O campo de data de editora deve ser preenchido!"></app-mensagem>
-            <app-mensagem *ngIf="editora?.errors?.['maiorIdadeValidator'] && !editora?.errors?.['required']" mensagem="O usuário deve ser maior de 18 anos!"></app-mensagem>
           </div>
         </div>
         <div class="formulario__campo">
             <label class="campo__etiqueta" for="lancamento">Data de Lançamento</label>
-            <input name="lancamento" id="lancamento" type="date" class="campo__escrita" ngModel required maiorIdadeValidator #lancamento="ngModel"/>
+            <input name="lancamento" id="lancamento" type="text" class="campo__escrita" ngModel required #lancamento="ngModel" [(ngModel)]="livro.BD_ANOLANCAMENTO"/>
             <div *ngIf="(lancamento?.invalid && lancamento?.touched) || lancamento?.dirty">
-              <app-mensagem *ngIf="lancamento?.errors?.['required']" mensagem="O campo de data de lançamento deve ser preenchido!"></app-mensagem>
-              <app-mensagem *ngIf="lancamento?.errors?.['maiorIdadeValidator'] && !lancamento?.errors?.['required']" mensagem="O usuário deve ser maior de 18 anos!"></app-mensagem>
+              <app-mensagem *ngIf="lancamento?.errors?.['required']" mensagem="O campo de data de lançamento deve ser preenchido!"></app-mensagem>            
             </div>
           </div>
       </div>
@@ -41,7 +38,7 @@
       <div class="formulario__dupla">
         <div class="formulario__campo">
             <label class="campo__etiqueta" for="categoria">Categoria do livro</label>
-            <select id="categoria" name="categoria" class="campo__escrita" ngModel required #categoria="ngModel">
+            <select id="categoria" name="categoria" class="campo__escrita" ngModel required #categoria="ngModel" [(ngModel)]="livro.BD_TROCAOUDOACAO">
               <option value="troca">Troca</option>
               <option value="doacao">Doação</option>
             </select>
@@ -52,7 +49,7 @@
   
         <div class="formulario__campo">
           <label class="campo__etiqueta" for="materia">Matéria do Livro</label>
-          <select id="materia" name="materia" class="campo__escrita" ngModel required #materia="ngModel">
+          <select id="materia" name="materia" class="campo__escrita" ngModel required #materia="ngModel" [(ngModel)]="livro.BD_MATERIA" >
             <option value="portugues">Ligua Portuguêsa</option>
             <option value="ingles">Inglês</option>
             <option value="matematica">Matemática</option>
@@ -80,7 +77,7 @@
 
 
       <br>
-      <button type="submit" class="formulario__botao">Enviar formulário</button>
+      <button type="submit" class="formulario__botao">Salvar Alterações</button>
       </form>
       <br>
   </main>

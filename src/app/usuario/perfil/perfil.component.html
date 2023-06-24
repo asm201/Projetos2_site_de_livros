@@ -11,15 +11,15 @@
 </section>
 <section class="container">
     <div class="adicionar__livro"><button type="button" class="formulario__botao" routerLink="/cadastra_livro">Adicionar Livro</button></div>
-    <div class="mural">
+    <div class="mural" *ngFor="let livro of livros">
         <div class="card">
             <!-- 1ª linha -->
             <div class="card__descricao">
                 <!-- 1ª coluna -->
                 <div class="descricao">
-                    <h3 class="descricao__titulo">nome do livro</h3>
-                    <h2 class="descricao__titulo-livro">autor</h2>
-                    <p class="descricao__texto">descrição fgsgggerg agsgf</p>
+                    <h3 class="descricao__titulo">{{livro.BD_NOME}}</h3>
+                    <h2 class="descricao__titulo-livro">{{livro.BD_EDITORA}}</h2>
+                    <p class="descricao__texto">{{livro.BD_MATERIA}}</p>
                     <p class="descricao__texto">descrição</p>
                 </div>
                 <!-- 2ª coluna -->
@@ -29,8 +29,8 @@
             <div class="card__botoes">
                 <!-- 1ª coluna -->
                 <!-- 2ª coluna -->
-                <a href="#" class="botoes__ancora">Alugar</a>
-                <a href="#" class="botoes__ancora">Pedir Doação</a>
+                <a routerLink="/editar_livro/{{livro.id}}" class="botoes__ancora">Editar</a>
+                <a href="#" class="botoes__ancora">Deletar</a>
             </div>
         </div>
     </div>

@@ -15,15 +15,12 @@ export class CadastraLivroComponent implements OnInit {
 
   constructor(private router:Router) { }
 
-  trocaOuDoacao = ''
-
   FE_novoNomeLivro = ''
   FE_novoCapa = ''
   FE_novoEditora = ''
   FE_novoAnoLancamento = ''
   FE_novoAutor = ''
-  FE_novoTroca = false
-  FE_novoDoacao = false
+  FE_novoTrocaOuDoacao = ''
   FE_novoMateria = ''
   FE_novoEmailUsuario  = 'emailteste@teste.com'
 
@@ -58,14 +55,6 @@ export class CadastraLivroComponent implements OnInit {
   async cadastrar(form: NgForm){
     if(form.valid){
       try {
-
-        if(this.trocaOuDoacao === 'doacao'){
-          this.FE_novoTroca = false
-          this.FE_novoDoacao = true
-        } else if(this.trocaOuDoacao === 'troca'){
-          this.FE_novoTroca = true
-          this.FE_novoDoacao = false
-        }
         console.log(this.FE_novoCapa)
         console.log(this.base64textString)
 
@@ -75,8 +64,7 @@ export class CadastraLivroComponent implements OnInit {
           BD_EDITORA: this.FE_novoEditora,
           BD_ANOLANCAMENTO: this.FE_novoAnoLancamento,
           BD_AUTORA: this.FE_novoAutor,
-          BD_TROCA: this.FE_novoTroca,
-          BD_DOACAO: this.FE_novoDoacao,
+          BD_TROCAOUDOACAO: this.FE_novoTrocaOuDoacao,
           BD_MATERIA: this.FE_novoMateria,
           BD_EMAIL_USUARIO: this.FE_novoEmailUsuario
         })

@@ -18,10 +18,8 @@ export class Livros {
     BD_MATERIA = '';
     @Fields.string()
     BD_EMAIL_USUARIO = '';
-    @Fields.boolean()
-    BD_TROCA = false;
-    @Fields.boolean()
-    BD_DOACAO = false;
+    @Fields.string()
+    BD_TROCAOUDOACAO = '';
     @Fields.string()
     BD_ANOLANCAMENTO = '';
     @Fields.string()
