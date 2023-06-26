@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { remult } from 'remult';
 import { Livros } from 'src/Shared/Livros';
+import { Usuario } from 'src/Shared/Usuario';
 
 @Component({
   selector: 'app-perfil',
@@ -9,13 +11,28 @@ import { Livros } from 'src/Shared/Livros';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   livros: Livros[] = []
+  usuarios: Usuario[] = []
+  //checklivros: Livros[] = []
   livroRepo = remult.repo(Livros)
+  usaurioRepo = remult.repo(Usuario)
+
+  busca = new URLSearchParams(window.location.href)
+  email: any = this.busca.get('http://localhost:4200/usuario?email')
+
   ngOnInit(){
+    this.usaurioRepo.find({where:{BD_EMAIL: this.email}}).then((usuario)=> (this.usuarios = usuario))
     const teste = this.livroRepo.find({where:{BD_EMAIL_USUARIO: 'emailteste@teste.com'}}).then((livros)=> (this.livros = livros))
+    /*const array = this.livroRepo.find().then((checklivros)=> (this.checklivros = checklivros)).then((resposta)=>{if(resposta.length == 3){
+      this.router.navigate(['./sucesso'])
+    }else{
+      console.log('fracasso')
+    }})
+    console.log(array)*/
   }
+
 
   async deletar(livro: Livros){
     try {

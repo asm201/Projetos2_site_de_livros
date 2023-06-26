@@ -2,14 +2,14 @@
     <h2 class="principal__titulo">Faça seu login</h2>
     <br>
     <br>
-    <form class="principal__formulario" id="formulario" #f="ngForm">
+    <form class="principal__formulario" id="formulario" #f="ngForm" (ngSubmit)="logar()">
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="email">Email:</label>
-        <input name="email" id="email" class="campo__escrita" ngModel required #email="ngModel">
+        <input name="email" id="email" class="campo__escrita" ngModel required #email="ngModel" [(ngModel)]="email_login">
       </div>
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="senha">Senha:</label>
-        <input name="senha" id="senha" class="campo__escrita" ngModel required #senha="ngModel">
+        <input name="senha" id="senha" class="campo__escrita" ngModel required #senha="ngModel" [(ngModel)]="senha_login">
       </div>
         <br>
         <button type="submit" class="login__botao">Login</button>
