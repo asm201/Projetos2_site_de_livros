@@ -20,11 +20,13 @@ import { EditarLivroComponent } from './livros/editar-livro/editar-livro.compone
 import { DeletarLivroComponent } from './livros/deletar-livro/deletar-livro.component';
 import { PerfilComponent } from './usuario/perfil/perfil.component';
 import { SucessoCadastroLivroComponent } from './sucesso-cadastro-livro/sucesso-cadastro-livro.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent, CadastroComponent, SucessoCadastroComponent, MensagemComponent, MaiorIdadeDirective, ValidandoCepDirective, TelaInicialComponent, LoginComponent, SobreNosComponent, CadastraLivroComponent, ListarLivrosComponent, EditarLivroComponent, DeletarLivroComponent, PerfilComponent, SucessoCadastroLivroComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, CommonModule],
+  exports:[HeaderComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
