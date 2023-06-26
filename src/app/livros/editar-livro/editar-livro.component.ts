@@ -13,6 +13,7 @@ export class EditarLivroComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute) { }
 
+
   livros: Livros[] = []
   livroRepo = remult.repo(Livros)
   ngOnInit(): void {
@@ -24,7 +25,7 @@ export class EditarLivroComponent implements OnInit {
     try {
       if(form.valid){
         await this.livroRepo.save(livro)
-        this.router.navigate(['./sucesso_livro'])
+        this.router.navigate(['./sucesso_livro'],{queryParams:{email:livro.BD_EMAIL_USUARIO}})
       }else{
         alert('formulario invalido!')
       }

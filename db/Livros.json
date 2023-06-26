@@ -34,10 +34,10 @@
   },
   {
     "id": 4,
-    "BD_NOME": "livro teste",
+    "BD_NOME": "livro teste editado",
     "BD_EDITORA": "editora teste",
     "BD_AUTORA": "autor teste",
-    "BD_MATERIA": "quimica",
+    "BD_MATERIA": "biologia",
     "BD_EMAIL_USUARIO": "asirikaku2000@gmail.com",
     "BD_TROCAOUDOACAO": "troca",
     "BD_ANOLANCAMENTO": "2001",
