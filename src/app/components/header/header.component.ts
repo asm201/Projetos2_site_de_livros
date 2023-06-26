@@ -21,9 +21,12 @@ export class HeaderComponent implements OnInit {
   })
   }
   
+  public acessarPerfil(): any{
+    this.router.navigate(['/usuario'],{queryParamsHandling:'preserve'})
+  }
 
-  telaCadastro(){
-    this.router.navigate(['cadastro'])
+  public irListaLivros(): any{
+    this.router.navigate(['/lista_livro'],{queryParamsHandling:'preserve'})
   }
 
 }

@@ -1,24 +1,34 @@
 <header class="cabeçalho">
   <div class="container">
-      <img src="/assets/img/Logo.svg" alt="Logo da Alurabooks" class="container__imagem" (click)="telaCadastro()">
+      <img src="/assets/img/Logo.svg" alt="Logo da Alurabooks" class="container__imagem">
       <h1 class="container__titulo"><b class="container__titulo--negrito">IF</b>Books</h1>
   </div>
 
-  <div *ngIf="url == '/home' || url == '/sobre_nos'; else cabecalho"></div>
+  <div *ngIf="url == '/home' || url == '/sobre_nos' || url == '/login'|| url == '/cadastro'; else cabecalho"> 
+    <ul class="opções">
+    <input type="checkbox" id="opções-menu" class="opções__botão">
+    <li class="opções__item"><a href="#" class="opções__link">Home</a></li>
+    </ul>
+  </div>
   <ng-template #cabecalho>
     <ul class="opções">
         <input type="checkbox" id="opções-menu" class="opções__botão">
-        <li class="opções__item"><a href="#" class="opções__link">Home</a></li>
-        <li class="opções__item"><a href="#" class="opções__link">Categorias</a></li>
-        <li class="opções__item"><a href="#" class="opções__link">Favoritos</a></li>
-        <li class="opções__item"><a href="#" class="opções__link">Minha estante</a></li>
+        <li class="opções__item"><a (click)="irListaLivros()" class="opções__link">Lista de Livros</a></li>
     </ul>
   </ng-template>
 
-  <div class="container">
-      <a routerLink="/login" class="container__link">
-          <img src="/assets/img/Usuario.svg" alt="Meu perfil" class="container__imagem">
-          <p class="container__texto">Meu perfil</p>
-      </a>
+  <div class="container" *ngIf="url == '/home' || url == '/sobre_nos' || url == '/login'|| url == '/cadastro'; else perfil"> 
+        <a routerLink="/login" class="container__link">
+            <img src="/assets/img/Usuario.svg" alt="Meu perfil" class="container__imagem">
+            <p class="container__texto">Logar</p>
+        </a>
   </div>
+  <ng-template #perfil>
+    <div class="container">
+        <a (click)="acessarPerfil()" class="container__link">
+            <img src="/assets/img/Usuario.svg" alt="Meu perfil" class="container__imagem">
+            <p class="container__texto">Meu perfil</p>
+        </a>
+    </div>
+  </ng-template>
 </header>
