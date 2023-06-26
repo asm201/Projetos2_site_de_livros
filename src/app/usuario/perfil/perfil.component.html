@@ -9,7 +9,7 @@
     
 </section>
 <section class="container">
-    <div class="adicionar__livro"><button type="button" class="formulario__botao" routerLink="/cadastra_livro">Adicionar Livro</button></div>
+    <div class="adicionar__livro"><button type="button" class="formulario__botao" (click)="cadastraLivro()">Adicionar Livro</button></div>
     <div class="mural" *ngFor="let livro of livros">
         <div class="card">
             <!-- 1ª linha -->

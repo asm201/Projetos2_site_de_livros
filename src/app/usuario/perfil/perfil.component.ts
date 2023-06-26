@@ -24,7 +24,7 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit(){
     this.usaurioRepo.find({where:{BD_EMAIL: this.email}}).then((usuario)=> (this.usuarios = usuario))
-    const teste = this.livroRepo.find({where:{BD_EMAIL_USUARIO: 'emailteste@teste.com'}}).then((livros)=> (this.livros = livros))
+    const teste = this.livroRepo.find({where:{BD_EMAIL_USUARIO: this.email}}).then((livros)=> (this.livros = livros))
     /*const array = this.livroRepo.find().then((checklivros)=> (this.checklivros = checklivros)).then((resposta)=>{if(resposta.length == 3){
       this.router.navigate(['./sucesso'])
     }else{
@@ -43,5 +43,12 @@ export class PerfilComponent implements OnInit {
     } catch (error: any) {
       alert(error.message)
     }
+  }
+
+  cadastraLivro(){
+    this. router.navigate(
+      ["/cadastra_livro"],
+      {queryParamsHandling:'preserve'}
+      );
   }
 }
