@@ -11,10 +11,14 @@
         <div class="card__descricao">
             <!-- 1ª coluna -->
             <div class="descricao">
-                <h3 class="descricao__titulo">{{livro.BD_NOME}}</h3>
-                <h2 class="descricao__titulo-livro">{{livro.BD_AUTORA}}</h2>
-                <p class="descricao__texto">descrição fgsgggerg agsgf</p>
-                <p class="descricao__texto">descrição</p>
+              <h3 class="descricao__titulo">{{livro.BD_NOME}}</h3>
+              <h2 class="descricao__titulo-livro"><b class="negrito">Por: </b>{{livro.BD_AUTORA}}</h2>
+              <br>
+              <p class="descricao__texto"><b class="negrito">Editora: </b>{{livro.BD_EDITORA}}</p>
+              <br>
+              <p class="descricao__texto"><b class="negrito">Matéria: </b>{{livro.BD_MATERIA}}</p>
+              <br>
+              <p class="descricao__texto"><b class="negrito">Ano Lançamento: </b>{{livro.BD_ANOLANCAMENTO}}</p>
             </div>
             <!-- 2ª coluna -->
             <img class="descricao__imagem" src="../../../assets/img/ApacheKafka.png">
@@ -23,8 +27,7 @@
         <div class="card__botoes">
             <!-- 1ª coluna -->
             <!-- 2ª coluna -->
-            <a href="#" class="botoes__ancora">Alugar</a>
-            <a href="#" class="botoes__ancora">Pedir Doação</a>
+            <a href="#" class="botoes__ancora">{{livro.BD_TROCAOUDOACAO}}</a>
         </div>
     </div>
     

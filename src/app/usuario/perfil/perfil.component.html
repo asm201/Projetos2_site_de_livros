@@ -1,11 +1,11 @@
 <section class="sobre-site" *ngFor="let usuario of usuarios">
     <h1 class="sobre-site__titulo">Sobre Mim</h1>
-    <p class="tobre-site__texto">Dados Pessoais: </p>
-    <p class="tobre-site__texto">Nome Completo: {{usuario.BD_NOMECOMPLETO}}</p>
-    <p class="tobre-site__texto">email: {{usuario.BD_EMAIL}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; contato: {{usuario.BD_CELULAR}}</p>
-    <p class="tobre-site__texto">Endereço: </p>
-    <p class="tobre-site__texto">Rua: {{usuario.BD_ENDERECO}}, {{usuario.BD_NUMERO}}</p>
-    <p class="tobre-site__texto">bairri: {{usuario.BD_BAIRRO}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cidade: {{usuario.BD_CIDADE}}</p>
+    <p class="tobre-site__subtitulo">Dados Pessoais: </p>
+    <p class="tobre-site__texto"><b class="negrito">Nome Completo:</b> {{usuario.BD_NOMECOMPLETO}}</p>
+    <p class="tobre-site__texto"><b class="negrito">email: </b>{{usuario.BD_EMAIL}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b class="negrito">contato:</b> {{usuario.BD_CELULAR}}</p>
+    <p class="tobre-site__subtitulo">Endereço: </p>
+    <p class="tobre-site__texto"><b class="negrito">Rua:</b> {{usuario.BD_ENDERECO}}, {{usuario.BD_NUMERO}}</p>
+    <p class="tobre-site__texto"><b class="negrito">bairro:</b> {{usuario.BD_BAIRRO}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="negrito">Cidade:</b>  {{usuario.BD_CIDADE}}</p>
     
 </section>
 <section class="container">
@@ -17,9 +17,13 @@
                 <!-- 1ª coluna -->
                 <div class="descricao">
                     <h3 class="descricao__titulo">{{livro.BD_NOME}}</h3>
-                    <h2 class="descricao__titulo-livro">{{livro.BD_EDITORA}}</h2>
-                    <p class="descricao__texto">{{livro.BD_MATERIA}}</p>
-                    <p class="descricao__texto">descrição</p>
+                    <h2 class="descricao__titulo-livro"><b class="negrito">Por: </b>{{livro.BD_AUTORA}}</h2>
+                    <br>
+                    <p class="descricao__texto"><b class="negrito">Editora: </b>{{livro.BD_EDITORA}}</p>
+                    <br>
+                    <p class="descricao__texto"><b class="negrito">Matéria: </b>{{livro.BD_MATERIA}}</p>
+                    <br>
+                    <p class="descricao__texto"><b class="negrito">Ano Lançamento: </b>{{livro.BD_ANOLANCAMENTO}}</p>
                 </div>
                 <!-- 2ª coluna -->
                 <img class="descricao__imagem" src="../../../assets/img/ApacheKafka.png">

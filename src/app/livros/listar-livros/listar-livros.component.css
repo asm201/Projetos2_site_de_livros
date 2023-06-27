@@ -82,6 +82,11 @@
     margin-right: 2px;
   }
 
+  .negrito{
+    font-weight: bold;
+  }
+  
+
   .card{
     background: var(--branco);
     box-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.25);
