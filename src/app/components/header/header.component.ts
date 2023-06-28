@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.router.events.subscribe((val) => {
-      console.log(window.location.pathname) 
       this.url = window.location.pathname
   })
   }

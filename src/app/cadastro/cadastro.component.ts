@@ -54,6 +54,7 @@ export class CadastroComponent implements OnInit {
         this.usuarios.push(novoUsuario)
       } catch (error:any) {
         alert(error.mensage)
+        return
       }
       this.router.navigate(['./sucesso'])
     }else{

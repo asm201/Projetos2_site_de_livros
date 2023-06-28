@@ -1,19 +1,17 @@
-<header class="cabeçalho">
+<header class="cabecalho">
   <div class="container">
       <img src="/assets/img/Logo.svg" alt="Logo da Alurabooks" class="container__imagem">
       <h1 class="container__titulo"><b class="container__titulo--negrito">IF</b>Books</h1>
   </div>
 
   <div *ngIf="url == '/home' || url == '/sobre_nos' || url == '/login'|| url == '/cadastro'; else cabecalho"> 
-    <ul class="opções">
-    <input type="checkbox" id="opções-menu" class="opções__botão">
-    <li class="opções__item"><a href="#" class="opções__link">Home</a></li>
+    <ul class="opcoes">
+    <li class="opcoes__item"><a href="#" class="opcoes__link">Home</a></li>
     </ul>
   </div>
   <ng-template #cabecalho>
-    <ul class="opções">
-        <input type="checkbox" id="opções-menu" class="opções__botão">
-        <li class="opções__item"><a (click)="irListaLivros()" class="opções__link">Lista de Livros</a></li>
+    <ul class="opcoes">
+        <li class="opcoes__item"><a (click)="irListaLivros()" class="opcoes__link">Lista de Livros</a></li>
     </ul>
   </ng-template>
 
