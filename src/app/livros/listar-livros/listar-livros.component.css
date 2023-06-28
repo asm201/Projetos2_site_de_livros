@@ -10,17 +10,6 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-  }
-  
-  .sem-pensamentos {
-    text-align: center;
-    padding: 2rem 0 5rem;
-  }
-  
-  .d-flex{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
     justify-content: center;
   }
   
@@ -70,16 +59,6 @@
     text-decoration: none;
     padding-left: 15px;
     border-radius: 10px;
-  }
-  
-  .botoes {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .botoes button {
-    margin-left: 10px;
-    margin-right: 2px;
   }
 
   .negrito{
