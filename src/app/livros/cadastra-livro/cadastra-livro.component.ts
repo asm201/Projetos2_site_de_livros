@@ -16,7 +16,7 @@ export class CadastraLivroComponent implements OnInit {
   constructor(private router:Router) { }
 
   busca = new URLSearchParams(window.location.href)
-  email: any = this.busca.get('https://ifbooks-production.up.railway.app/cadastra_livro?email' || 'projetos2sitedelivros-production-70ef.up.railway.app/cadastra_livro?email') //mudar aqui //mudar aqui para https://site-livros-production.up.railway.app/cadastra_livro?email
+  email: any = this.busca.get('https://ifbooks-production.up.railway.app/cadastra_livro?email' || 'https://projetos2sitedelivros-production-70ef.up.railway.app/cadastra_livro?email') //mudar aqui //mudar aqui para https://site-livros-production.up.railway.app/cadastra_livro?email
 
   FE_novoNomeLivro = ''
   FE_novoCapa = ''
