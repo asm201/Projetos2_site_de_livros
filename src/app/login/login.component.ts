@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         alert("Login Aceito !")
         this.router.navigate(['./usuario'],{queryParams:{email:this.email_login}})
       }else{
-        alert("Login Icorreto")
+        alert("Login Incorreto")
         this.email_login = ''
         this.senha_login = ''
       }})

@@ -50,7 +50,7 @@
         <div class="formulario__campo">
           <label class="campo__etiqueta" for="materia">Matéria do Livro</label>
           <select id="materia" name="materia" class="campo__escrita" ngModel required #materia="ngModel" [(ngModel)]="FE_novoMateria">
-            <option value="portugues">Ligua Portuguêsa</option>
+            <option value="portugues">Lingua Portuguesa</option>
             <option value="ingles">Inglês</option>
             <option value="matematica">Matemática</option>
             <option value="quimica">Química</option>
@@ -58,7 +58,7 @@
             <option value="geografia">Geografia</option>
             <option value="biologia">Biologia</option>
             <option value="historia">História</option>
-            <option value="programacao">Programção</option>
+            <option value="programacao">Programação</option>
             <option value="espanhol">Espanhol</option>
           </select>
           <div *ngIf="(materia?.invalid && materia?.touched) || materia?.dirty">
