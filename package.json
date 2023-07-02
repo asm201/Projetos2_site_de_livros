@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "tsx backend/server",
     "dev": "ng serve --proxy-config proxy.conf.json",
-    "dev-node": "tsx watch src/server",
+    "dev-node": "tsx watch backend/server/index.ts",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

@@ -174,4 +174,10 @@
       width: 510px;
     }
   }
+
+  .button-img {
+    border: none;
+    background: none;
+    padding: 0;
+  }
   

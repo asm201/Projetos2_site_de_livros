@@ -1,35 +1,36 @@
 <section class="container">
-    <header class="header d-flex">
-      <div class="buscar-pensamentos">
-        <input type="search" class="filtro" placeholder="O que você procura?" autofocus>
+  <header class="header d-flex">
+    <div class="buscar-pensamentos">
+      <input type="search" class="filtro" [(ngModel)]="termoPesquisa" placeholder="O que você procura?" autofocus>
+      <button type="button" class="button-img" (click)="pesquisarLivros()">
         <img src="../../../../assets/img/lupa.png" alt="Lupa Azul">
+      </button>
+    </div>
+  </header>
+  <div class="mural" *ngFor="let livro of livros">
+    <div class="card">
+      <!-- 1ª linha -->
+      <div class="card__descricao">
+        <!-- 1ª coluna -->
+        <div class="descricao">
+          <h3 class="descricao__titulo">{{livro.BD_NOME}}</h3>
+          <h2 class="descricao__titulo-livro"><b class="negrito">Por: </b>{{livro.BD_AUTORA}}</h2>
+          <br>
+          <p class="descricao__texto"><b class="negrito">Editora: </b>{{livro.BD_EDITORA}}</p>
+          <br>
+          <p class="descricao__texto"><b class="negrito">Matéria: </b>{{livro.BD_MATERIA}}</p>
+          <br>
+          <p class="descricao__texto"><b class="negrito">Ano Lançamento: </b>{{livro.BD_ANOLANCAMENTO}}</p>
+        </div>
+        <!-- 2ª coluna -->
+        <img [src]="'data:image/jpeg;base64,' + livro.BD_CAPA" alt="Imagem" />
       </div>
-    </header>
-    <div class="mural" *ngFor="let livro of livros">
-      <div class="card">
-        <!-- 1ª linha -->
-        <div class="card__descricao">
-            <!-- 1ª coluna -->
-            <div class="descricao">
-              <h3 class="descricao__titulo">{{livro.BD_NOME}}</h3>
-              <h2 class="descricao__titulo-livro"><b class="negrito">Por: </b>{{livro.BD_AUTORA}}</h2>
-              <br>
-              <p class="descricao__texto"><b class="negrito">Editora: </b>{{livro.BD_EDITORA}}</p>
-              <br>
-              <p class="descricao__texto"><b class="negrito">Matéria: </b>{{livro.BD_MATERIA}}</p>
-              <br>
-              <p class="descricao__texto"><b class="negrito">Ano Lançamento: </b>{{livro.BD_ANOLANCAMENTO}}</p>
-            </div>
-            <!-- 2ª coluna -->
-            <img class="descricao__imagem" src="../../../assets/img/ApacheKafka.png">
-        </div>
-        <!-- 2ª linha -->
-        <div class="card__botoes">
-            <!-- 1ª coluna -->
-            <!-- 2ª coluna -->
-            <a href="#" class="botoes__ancora">{{livro.BD_TROCAOUDOACAO}}</a>
-        </div>
+      <!-- 2ª linha -->
+      <div class="card__botoes">
+        <!-- 1ª coluna -->
+        <!-- 2ª coluna -->
+        <a href="#" class="botoes__ancora">{{livro.BD_TROCAOUDOACAO}}</a>
+      </div>
     </div>
-    
-    </div>
+  </div>
 </section>
