@@ -26,7 +26,7 @@
                     <p class="descricao__texto"><b class="negrito">Ano Lançamento: </b>{{livro.BD_ANOLANCAMENTO}}</p>
                 </div>
                 <!-- 2ª coluna -->
-                <img class="descricao__imagem" src="../../../assets/img/ApacheKafka.png">
+                <img [src]="'data:image/jpeg;base64,' + livro.BD_CAPA" alt="Imagem" />
             </div>
             <!-- 2ª linha -->
             <div class="card__botoes">

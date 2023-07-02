@@ -49,4 +49,9 @@ export class ListarLivrosComponent implements OnInit {
     }
   }
 
+  exibirAviso(mensagem: string) {
+    alert("Sua solicitação foi registrada!"); // Exibe um aviso usando o método alert do JavaScript
+    // Ou utilize um componente de aviso personalizado
+  }
+
 }

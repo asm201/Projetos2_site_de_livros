@@ -29,7 +29,9 @@
       <div class="card__botoes">
         <!-- 1ª coluna -->
         <!-- 2ª coluna -->
-        <a href="#" class="botoes__ancora">{{livro.BD_TROCAOUDOACAO}}</a>
+        <button class="botoes__ancora" (click)="exibirAviso(livro.BD_TROCAOUDOACAO)">
+          {{livro.BD_TROCAOUDOACAO}}
+        </button>
       </div>
     </div>
   </div>
