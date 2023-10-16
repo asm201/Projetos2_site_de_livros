@@ -20,9 +20,11 @@ export class PerfilComponent implements OnInit {
   usaurioRepo = remult.repo(Usuario)
 
   busca = new URLSearchParams(window.location.href)
-  email: any = this.busca.get('https://projetos2sitedelivros-production-70ef.up.railway.app/usuario?email') //mudar aqui para https://site-livros-production.up.railway.app/usuario?email
+  email: any = this.busca.get('http://localhost:4200/usuario?email') 
+  //email: any = this.busca.get('https://projeto3-tcc-production.up.railway.app/usuario?email') //mudar aqui para https://site-livros-production.up.railway.app/usuario?email
 
   ngOnInit(){
+    console.log(this.email)
     this.usaurioRepo.find({where:{BD_EMAIL: this.email}}).then((usuario)=> (this.usuarios = usuario))
     const teste = this.livroRepo.find({where:{BD_EMAIL_USUARIO: this.email}}).then((livros)=> (this.livros = livros))
     /*const array = this.livroRepo.find().then((checklivros)=> (this.checklivros = checklivros)).then((resposta)=>{if(resposta.length == 3){

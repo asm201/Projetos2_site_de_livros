@@ -5,9 +5,9 @@ import { createPostgresConnection } from 'remult/postgres'
 
 export const api = remultExpress({
     entities:[Usuario,Livros],
-    dataProvider: createPostgresConnection({
+    /*dataProvider: createPostgresConnection({
         connectionString: 
             process.env['DATABASE_URL']
-    }),
+    }),*/
 })
 

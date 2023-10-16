@@ -21,13 +21,18 @@ import { DeletarLivroComponent } from './livros/deletar-livro/deletar-livro.comp
 import { PerfilComponent } from './usuario/perfil/perfil.component';
 import { SucessoCadastroLivroComponent } from './sucesso-cadastro-livro/sucesso-cadastro-livro.component';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { StreamChatModule, StreamAutocompleteTextareaModule } from 'stream-chat-angular';
+import { ChatComponent } from './chat/chat.component';
+
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, CadastroComponent, SucessoCadastroComponent, MensagemComponent, MaiorIdadeDirective, ValidandoCepDirective, TelaInicialComponent, LoginComponent, SobreNosComponent, CadastraLivroComponent, ListarLivrosComponent, EditarLivroComponent, DeletarLivroComponent, PerfilComponent, SucessoCadastroLivroComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, CommonModule],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, CadastroComponent, SucessoCadastroComponent, MensagemComponent, MaiorIdadeDirective, ValidandoCepDirective, TelaInicialComponent, LoginComponent, SobreNosComponent, CadastraLivroComponent, ListarLivrosComponent, EditarLivroComponent, DeletarLivroComponent, PerfilComponent, SucessoCadastroLivroComponent, ChatComponent],
+  imports: [StreamChatModule,StreamAutocompleteTextareaModule,TranslateModule.forRoot(), BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, CommonModule],
   exports:[HeaderComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
+

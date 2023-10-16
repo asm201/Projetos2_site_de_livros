@@ -1,9 +1,11 @@
+import { Usuario } from './../../Shared/Usuario';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {NgForm, NgModel} from '@angular/forms'
 import { ConsultaCepService } from '../service/consulta-cep.service';
-import { Usuario } from 'src/Shared/Usuario';
 import { remult } from 'remult';
+import { StreamChat } from 'stream-chat';
+import { retry } from 'remult/src/buildRestDataProvider';
 
 
 @Component({
@@ -34,6 +36,7 @@ export class CadastroComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   async cadastrar(form: NgForm){
     if(form.valid){
       try {
@@ -52,10 +55,12 @@ export class CadastroComponent implements OnInit {
           BD_SENHA: this.FE_novoSenha
         })
         this.usuarios.push(novoUsuario)
+
       } catch (error:any) {
         alert(error.mensage)
         return
       }
+
       this.router.navigate(['./sucesso'])
     }else{
       alert('formulario invalido!')

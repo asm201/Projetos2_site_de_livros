@@ -10,6 +10,7 @@ import { ListarLivrosComponent } from './livros/listar-livros/listar-livros.comp
 import { EditarLivroComponent } from './livros/editar-livro/editar-livro.component';
 import { PerfilComponent } from './usuario/perfil/perfil.component';
 import { SucessoCadastroLivroComponent } from './sucesso-cadastro-livro/sucesso-cadastro-livro.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 const routes: Routes = [
@@ -57,7 +58,12 @@ const routes: Routes = [
   {
     path: 'usuario',
     component: PerfilComponent
+  },
+  {
+    path:'chat/:iduser',
+    component: ChatComponent
   }
+
   
   
 ];
