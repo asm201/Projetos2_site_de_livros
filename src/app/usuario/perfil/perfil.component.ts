@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { remult } from 'remult';
 import { Livros } from 'src/Shared/Livros';
 import { Usuario } from 'src/Shared/Usuario';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-perfil',
@@ -11,7 +12,7 @@ import { Usuario } from 'src/Shared/Usuario';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auth: AuthService) { }
 
   livros: Livros[] = []
   usuarios: Usuario[] = []
@@ -20,7 +21,7 @@ export class PerfilComponent implements OnInit {
   usaurioRepo = remult.repo(Usuario)
 
   busca = new URLSearchParams(window.location.href)
-  email: any = this.busca.get('http://localhost:4200/usuario?email') 
+  email: any = this.auth.getCurrentUser().email
   //email: any = this.busca.get('https://projeto3-tcc-production.up.railway.app/usuario?email') //mudar aqui para https://site-livros-production.up.railway.app/usuario?email
 
   ngOnInit(){
@@ -49,8 +50,6 @@ export class PerfilComponent implements OnInit {
 
   cadastraLivro(){
     this. router.navigate(
-      ["/cadastra_livro"],
-      {queryParamsHandling:'preserve'}
-      );
+      ["/cadastra_livro"]);
   }
 }

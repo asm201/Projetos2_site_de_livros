@@ -12,8 +12,8 @@
   <ng-template #cabecalho>
     <ul class="opcoes">
         <li class="opcoes__item"><a (click)="irListaLivros()" class="opcoes__link">Lista de Livros</a></li>
-        <li class="opcoes__item"><a routerLink="/chat/falvio" class="opcoes__link">Chat</a></li>
-        <li class="opcoes__item"><a href="#" class="opcoes__link">Sair</a></li>
+        <li class="opcoes__item"><a routerLink="/chat" class="opcoes__link">Chat</a></li>
+        <li class="opcoes__item"><a (click)="signOut()" class="opcoes__link">Sair</a></li>
     </ul>
   </ng-template>
 

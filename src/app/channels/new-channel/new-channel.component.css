@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    align-items: center;
+}
+mat-form-field {
+    display: block;
+
+    margin-bottom: -21px;
+}
+.botoes__ancora{
+    background-color: var(--laranja);
+    padding: 1em 2.2em;
+    color: var(--preto);
+    font-weight: 700;
+    text-decoration: none;
+}

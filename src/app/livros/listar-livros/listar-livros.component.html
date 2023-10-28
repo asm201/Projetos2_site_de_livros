@@ -29,9 +29,12 @@
       <div class="card__botoes">
         <!-- 1ª coluna -->
         <!-- 2ª coluna -->
-        <button class="botoes__ancora" (click)="exibirAviso(livro.BD_TROCAOUDOACAO)">
+        <button class="botoes__ancora" *ngIf="chatIsReady$ | async; else unavailable" (click)="criarChat(livro.BD_EDITORA, livro.BD_TOKEN_USUARIO)">
           {{livro.BD_TROCAOUDOACAO}}
         </button>
+        <ng-template #unavailable>
+          <div class="chat-notification">Chat is not available...</div>
+        </ng-template>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import {Router} from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   url: string
-  constructor(private router: Router) {
+  constructor(private router: Router, private auth: AuthService) {
     this.url = ''
    }
 
@@ -26,6 +27,12 @@ export class HeaderComponent implements OnInit {
 
   public irListaLivros(): any{
     this.router.navigate(['/lista_livro'],{queryParamsHandling:'preserve'})
+  }
+
+  signOut(){
+    this.auth.signOut().subscribe({
+      next: () => this.router.navigate(['home'])
+    })
   }
 
 }

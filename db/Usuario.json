@@ -14,17 +14,17 @@
     "BD_UF": "SP"
   },
   {
-    "BD_EMAIL": "asirikaku2000@gmail.com",
+    "BD_EMAIL": "blackjapa2000@gmail.com",
     "BD_NOMECOMPLETO": "André Sirikaku",
-    "BD_NASCIMENTO": "2000-09-09T00:00:00.000Z",
+    "BD_NASCIMENTO": "2000-01-03T00:00:00.000Z",
     "BD_CELULAR": "11975465912",
-    "BD_SENHA": "abc",
+    "BD_SENHA": "123123",
     "BD_CEP": "04026090",
-    "BD_ENDERECO": "Rua josé de magalhães, 373",
+    "BD_ENDERECO": "Rua José de Magalhães",
     "BD_NUMERO": "373",
     "BD_COMPLEMENTO": "",
     "BD_BAIRRO": "Vila Clementino",
-    "BD_CIDADE": "São paulo",
+    "BD_CIDADE": "São Paulo",
     "BD_UF": "SP"
   }
 ]

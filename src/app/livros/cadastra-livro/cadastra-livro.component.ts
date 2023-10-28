@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import {NgForm, NgModel} from '@angular/forms'
 import { Router } from '@angular/router';
@@ -13,10 +14,10 @@ export class CadastraLivroComponent implements OnInit {
 
   private base64textString:string="";
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private auth: AuthService) { }
 
   busca = new URLSearchParams(window.location.href)
-  email: any = this.busca.get('http://localhost:4200/cadastra_livro?email')
+  email: any = this.auth.getCurrentUser().email
   //email: any = this.busca.get('https://projeto3-tcc-production.up.railway.app/cadastra_livro?email') //mudar aqui //mudar aqui para https://site-livros-production.up.railway.app/cadastra_livro?email
 
   FE_novoNomeLivro = ''
@@ -61,7 +62,8 @@ export class CadastraLivroComponent implements OnInit {
           BD_AUTORA: this.FE_novoAutor,
           BD_TROCAOUDOACAO: this.FE_novoTrocaOuDoacao,
           BD_MATERIA: this.FE_novoMateria,
-          BD_EMAIL_USUARIO: this.email
+          BD_EMAIL_USUARIO: this.email,
+          BD_TOKEN_USUARIO: this.auth.getCurrentUser().uid
         })
         this.livros.push(novoLivro)
       } catch (error:any) {

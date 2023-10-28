@@ -23,16 +23,19 @@ import { SucessoCadastroLivroComponent } from './sucesso-cadastro-livro/sucesso-
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { StreamChatModule, StreamAutocompleteTextareaModule } from 'stream-chat-angular';
-import { ChatComponent } from './chat/chat.component';
-
-
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ChatModule } from './chat/chat.module';
+import { ChannelsModule } from "./channels/channels.module";
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, CadastroComponent, SucessoCadastroComponent, MensagemComponent, MaiorIdadeDirective, ValidandoCepDirective, TelaInicialComponent, LoginComponent, SobreNosComponent, CadastraLivroComponent, ListarLivrosComponent, EditarLivroComponent, DeletarLivroComponent, PerfilComponent, SucessoCadastroLivroComponent, ChatComponent],
-  imports: [StreamChatModule,StreamAutocompleteTextareaModule,TranslateModule.forRoot(), BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, CommonModule],
-  exports:[HeaderComponent],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent, HeaderComponent, FooterComponent, CadastroComponent, SucessoCadastroComponent, MensagemComponent, MaiorIdadeDirective, ValidandoCepDirective, TelaInicialComponent, LoginComponent, SobreNosComponent, CadastraLivroComponent, ListarLivrosComponent, EditarLivroComponent, DeletarLivroComponent, PerfilComponent, SucessoCadastroLivroComponent],
+    exports: [HeaderComponent],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [ChatModule, MatSnackBarModule, StreamChatModule, StreamAutocompleteTextareaModule, TranslateModule.forRoot(), BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, CommonModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAuth(() => getAuth()), ChannelsModule]
 })
 export class AppModule { }
 

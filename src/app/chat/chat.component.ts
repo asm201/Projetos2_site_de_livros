@@ -1,40 +1,42 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ChatClientService, ChannelService, StreamI18nService } from 'stream-chat-angular';
+import { AuthService } from 'src/app/service/auth.service';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, AfterViewInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Observable, catchError, from, map, of, pluck, switchMap } from 'rxjs';
+import { Channel } from 'stream-chat';
+import { ChannelActionsContext, ChannelPreviewContext, ChannelService, ChatClientService, CustomTemplatesService, DefaultStreamChatGenerics, StreamI18nService } from 'stream-chat-angular';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
-  constructor(private http: HttpClient,private route: ActivatedRoute, private chatService: ChatClientService, private channelService: ChannelService, private streamI18nService: StreamI18nService) {
-    const apiKey = 'v3kha4qgwkm3';
-    const user: any = this.route.snapshot.paramMap.get('iduser')
-    console.log(this.api(`http://localhost:3002/json/${user}`).subscribe(data => {this.a = data}))
-    console.log(this.a)
-   }
-   
-  a:string = ''
-   async ngOnInit() {
-/*
-    const channel = this.chatService.chatClient.channel('messaging', 'talking-about-angular', {
-      // add as many custom fields as you'd like
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png',
-      name: 'Talking about Angular',
-    });
-    await channel.create();
-    this.channelService.init({
-      type: 'messaging',
-      id: { $eq: 'talking-about-angular' },
-    });*/
-  }
+  chatIsReady$!: Observable<boolean>
+  constructor(
+    private chatService: ChatClientService,
+    private channelService: ChannelService,
+    private streamI18nService: StreamI18nService,
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
-  api(url: string){
-    let value
-    return this.http.get<any>(url)
+ngOnInit() {
+    this.channelService.reset()
+    this.streamI18nService.setTranslation();
+    this.chatIsReady$ = this.auth.getStreamToken().pipe(
+      switchMap((streamToken) => this.chatService.init(
+        environment.stream.key,
+        this.auth.getCurrentUser().uid, 
+        streamToken)),
+      switchMap(() => this.channelService.init({
+        type: 'messaging',
+        members: { $in: [this.auth.getCurrentUser().uid] },
+      })),
+      map(() => true),
+      catchError(() => of(false))
+    )
   }
-
 
 }

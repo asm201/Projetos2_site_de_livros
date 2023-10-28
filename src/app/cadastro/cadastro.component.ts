@@ -4,8 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm, NgModel} from '@angular/forms'
 import { ConsultaCepService } from '../service/consulta-cep.service';
 import { remult } from 'remult';
-import { StreamChat } from 'stream-chat';
-import { retry } from 'remult/src/buildRestDataProvider';
+import { AuthService } from '../service/auth.service'
+import { SignupCredencials } from '../Interfaces/auth.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -15,7 +16,13 @@ import { retry } from 'remult/src/buildRestDataProvider';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor(private router: Router, private consultaCepService: ConsultaCepService) { }
+  constructor(private router: Router, private consultaCepService: ConsultaCepService, private auth: AuthService, private snackbar: MatSnackBar) { }
+
+  user: SignupCredencials = {
+    password:'',
+    displayName: '',
+    email:''
+  }
 
   FE_novoNome = ''
   FE_novoNascimento = ''
@@ -54,14 +61,20 @@ export class CadastroComponent implements OnInit {
           BD_UF: this.FE_novoEstado,
           BD_SENHA: this.FE_novoSenha
         })
+        this.user.displayName = this.FE_novoNome
+        this.user.email = this.FE_novoEmail
+        this.user.password = this.FE_novoSenha 
         this.usuarios.push(novoUsuario)
+
+        this.auth.signUp(this.user).subscribe({
+          next: () => this.router.navigate(['./sucesso']),
+          error: (error) => this.snackbar.open(error.message)
+        });
 
       } catch (error:any) {
         alert(error.mensage)
         return
       }
-
-      this.router.navigate(['./sucesso'])
     }else{
       alert('formulario invalido!')
     }

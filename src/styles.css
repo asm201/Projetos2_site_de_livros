@@ -11,7 +11,9 @@
   --cinza: #474646;
   --cinza-claro: #858585;
   --vermelho: #D94937;
+  
 }
+@import 'stream-chat-angular/src/assets/styles/v2/css/index.css';
 
 html,
 body,
@@ -121,6 +123,15 @@ body {
   line-height: 1;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
 ol,
 ul {
   list-style: none;
@@ -151,3 +162,6 @@ body {
   font-size: 16px;
   font-weight: 400;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

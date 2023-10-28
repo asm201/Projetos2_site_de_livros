@@ -24,4 +24,6 @@ export class Livros {
     BD_ANOLANCAMENTO = '';
     @Fields.string()
     BD_CAPA = '';
+    @Fields.string()
+    BD_TOKEN_USUARIO = '';
 }

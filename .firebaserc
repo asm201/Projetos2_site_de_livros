@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ifbooks-d59f4": {
+      "hosting": {
+        "forms-reativos": [
+          "ifbooks-d59f4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ifbooks-d59f4"
+  }
+}

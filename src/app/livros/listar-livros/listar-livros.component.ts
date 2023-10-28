@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { dbNamesOf, EntityFilter, remult, SqlDatabase } from 'remult';
+import { Observable, catchError, from, map, of, switchMap } from 'rxjs';
 import { Livros } from 'src/Shared/Livros';
+import { AuthService } from 'src/app/service/auth.service';
+import { environment } from 'src/environments/environment';
+import { ChannelService, ChatClientService, StreamI18nService } from 'stream-chat-angular';
 
 @Component({
   selector: 'app-listar-livros',
@@ -11,12 +16,32 @@ export class ListarLivrosComponent implements OnInit {
 
   termoPesquisa: string = '';
 
-  constructor() { }
+  chatIsReady$!: Observable<boolean>
+  constructor(
+    private chatService: ChatClientService,
+    private channelService: ChannelService,
+    private streamI18nService: StreamI18nService,
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
   livros: Livros[] = []
   livroRepo = remult.repo(Livros)
   ngOnInit(){
     this.obterLivros();
+    this.streamI18nService.setTranslation();
+    this.chatIsReady$ = this.auth.getStreamToken().pipe(
+      switchMap((streamToken) => this.chatService.init(
+        environment.stream.key,
+        this.auth.getCurrentUser().uid, 
+        streamToken)),
+      switchMap(() => this.channelService.init({
+        type: 'messaging',
+        members: { $in: [this.auth.getCurrentUser().uid] },
+      })),
+      map(() => true),
+      catchError(() => of(false))
+    )
   }
 
   obterLivros() {
@@ -49,9 +74,21 @@ export class ListarLivrosComponent implements OnInit {
     }
   }
 
-  exibirAviso(mensagem: string) {
-    alert("Sua solicitação foi registrada!"); // Exibe um aviso usando o método alert do JavaScript
+  criarChat(nomeLivro: string, idUsuario: string) {
+    alert(`${nomeLivro}`); // Exibe um aviso usando o método alert do JavaScript
     // Ou utilize um componente de aviso personalizado
+    const name = `${nomeLivro}`
+    const dasherizedName = name.replace(/\s+/g, '-').toLowerCase();
+    const channel = this.chatService.chatClient.channel(
+      'messaging',
+      dasherizedName,
+      {
+        name:name,
+        members: [this.auth.getCurrentUser().uid, idUsuario]
+    });
+    from(channel.create())
+    this.router.navigate([`/chat`])
+    
   }
 
 }

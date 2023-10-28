@@ -60,8 +60,8 @@ const routes: Routes = [
     component: PerfilComponent
   },
   {
-    path:'chat/:iduser',
-    component: ChatComponent
+    path:'chat',
+    loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule)
   }
 
   
