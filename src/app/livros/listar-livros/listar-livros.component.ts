@@ -27,6 +27,7 @@ export class ListarLivrosComponent implements OnInit {
 
   livros: Livros[] = []
   livroRepo = remult.repo(Livros)
+  emailUsuarioAtual: any = this.auth.getCurrentUser().email
   ngOnInit(){
     this.obterLivros();
     this.streamI18nService.setTranslation();
@@ -45,7 +46,7 @@ export class ListarLivrosComponent implements OnInit {
   }
 
   obterLivros() {
-    this.livroRepo.find().then((livros) => {
+    this.livroRepo.find({where:{BD_EMAIL_USUARIO:{$ne:this.emailUsuarioAtual}}}).then((livros) => {
       this.livros = livros;
     }).catch((error) => {
       console.error('Erro ao obter os livros:', error);
@@ -74,21 +75,31 @@ export class ListarLivrosComponent implements OnInit {
     }
   }
 
-  criarChat(nomeLivro: string, idUsuario: string) {
-    alert(`${nomeLivro}`); // Exibe um aviso usando o método alert do JavaScript
-    // Ou utilize um componente de aviso personalizado
-    const name = `${nomeLivro}`
-    const dasherizedName = name.replace(/\s+/g, '-').toLowerCase();
+  criarChat(livro: Livros) {
+    livro.BD_DISPONIVEL = false
+    //Precisa testar ainda
+    const name = `${livro.BD_NOME}`
+    const nomeSemCaractereEspeciais = name.replace(/[^a-zA-Z ]/g, "")
+    const dasherizedName = nomeSemCaractereEspeciais.replace(/\s+/g, '-').toLowerCase();
+
     const channel = this.chatService.chatClient.channel(
       'messaging',
       dasherizedName,
       {
         name:name,
-        members: [this.auth.getCurrentUser().uid, idUsuario]
+        members: [this.auth.getCurrentUser().uid, livro.BD_TOKEN_USUARIO]
     });
     from(channel.create())
+    this.saveTask(livro)
     this.router.navigate([`/chat`])
-    
+  }
+
+  async saveTask(task: Livros) {
+    try {
+      await this.livroRepo.save(task)
+    } catch (error: any) {
+      alert(error.message)
+    }
   }
 
 }

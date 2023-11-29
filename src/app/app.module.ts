@@ -29,13 +29,14 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ChatModule } from './chat/chat.module';
 import { ChannelsModule } from "./channels/channels.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [AppComponent, HeaderComponent, FooterComponent, CadastroComponent, SucessoCadastroComponent, MensagemComponent, MaiorIdadeDirective, ValidandoCepDirective, TelaInicialComponent, LoginComponent, SobreNosComponent, CadastraLivroComponent, ListarLivrosComponent, EditarLivroComponent, DeletarLivroComponent, PerfilComponent, SucessoCadastroLivroComponent],
     exports: [HeaderComponent],
     providers: [],
     bootstrap: [AppComponent],
-    imports: [ChatModule, MatSnackBarModule, StreamChatModule, StreamAutocompleteTextareaModule, TranslateModule.forRoot(), BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, CommonModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAuth(() => getAuth()), ChannelsModule]
+    imports: [BrowserAnimationsModule,ChatModule, MatSnackBarModule, StreamChatModule, StreamAutocompleteTextareaModule, TranslateModule.forRoot(), BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, CommonModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAuth(() => getAuth()), ChannelsModule]
 })
 export class AppModule { }
 

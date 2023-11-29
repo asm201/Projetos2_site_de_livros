@@ -66,15 +66,16 @@
           </div>
         </div>
       </div>
-
       <div class="formulario__campo">
-        <label class="campo__etiqueta" for="arquivos">Imagem da Capa</label>
-        <input type="file" name="arquivos" class="imagem__arquivo"  accept="image/png, image/jpeg" ngModel required #arquivos="ngModel"/> 
-        <div *ngIf="(arquivos?.invalid && arquivos?.touched) || arquivos?.dirty">
-          <app-mensagem *ngIf="arquivos?.errors?.['required']" mensagem="O campo arquivos deve ser preenchido!"></app-mensagem>
+        <label class="campo__etiqueta" for="Disponibilidade">Status do Livro</label>
+        <select id="Disponibilidade" name="Disponibilidade" class="campo__escrita" ngModel required #Disponibilidade="ngModel" [(ngModel)]="livro.BD_DISPONIVEL">
+          <option [ngValue]="true">Disponivel</option>
+          <option [ngValue]="false">Indisponivel</option>
+        </select>
+        <div *ngIf="(Disponibilidade?.invalid && Disponibilidade?.touched) || Disponibilidade?.dirty">
+          <app-mensagem *ngIf="Disponibilidade?.errors?.['required']" mensagem="O campo de Disponibilidade deve ser preenchido!"></app-mensagem>
         </div>
       </div>
-
 
       <br>
       <button type="submit" class="formulario__botao">Salvar Alterações</button>

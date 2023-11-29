@@ -25,7 +25,7 @@ export class EditarLivroComponent implements OnInit {
     try {
       if(form.valid){
         await this.livroRepo.save(livro)
-        this.router.navigate(['./sucesso_livro'],{queryParams:{email:livro.BD_EMAIL_USUARIO}})
+        this.router.navigate(['./sucesso_livro'])
       }else{
         alert('formulario invalido!')
       }

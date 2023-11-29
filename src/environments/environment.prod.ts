@@ -10,6 +10,6 @@ export const environment = {
   production: true,
   apiUrl: 'https://us-central1-ifbooks-d59f4.cloudfunctions.net',
   stream:{
-    key:'v3kha4qgwkm3'
+    key:'h2dash6jzcqh'
   }
 };

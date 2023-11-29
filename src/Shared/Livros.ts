@@ -26,4 +26,6 @@ export class Livros {
     BD_CAPA = '';
     @Fields.string()
     BD_TOKEN_USUARIO = '';
+    @Fields.boolean()
+    BD_DISPONIVEL = true;
 }

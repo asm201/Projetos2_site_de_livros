@@ -6,8 +6,8 @@ const  cors = require("cors")({origin: true});
 const StreamChat = require('stream-chat').StreamChat
 
 const serverStreamClient = StreamChat.getInstance(
-    functions.config().stream.key,
-    functions.config().stream.secret
+    'h2dash6jzcqh',
+    'd462mqsrdkzpnwbwscavha8h8uvmy4vafb3by4xv33csgsp2utqrpsk8vvmtbtbv'
 )
 
 

@@ -26,16 +26,19 @@
         <img [src]="'data:image/jpeg;base64,' + livro.BD_CAPA" alt="Imagem" />
       </div>
       <!-- 2ª linha -->
-      <div class="card__botoes">
+      <div class="card__botoes" *ngIf="livro.BD_DISPONIVEL; else indisponivel">
         <!-- 1ª coluna -->
         <!-- 2ª coluna -->
-        <button class="botoes__ancora" *ngIf="chatIsReady$ | async; else unavailable" (click)="criarChat(livro.BD_EDITORA, livro.BD_TOKEN_USUARIO)">
-          {{livro.BD_TROCAOUDOACAO}}
-        </button>
-        <ng-template #unavailable>
-          <div class="chat-notification">Chat is not available...</div>
-        </ng-template>
+          <button class="botoes__ancora" *ngIf="chatIsReady$ | async; else unavailable" (click)="criarChat(livro)">
+            {{livro.BD_TROCAOUDOACAO}}
+          </button>
+          <ng-template #unavailable>
+            <div class="chat-notification">Chat is not available...</div>
+          </ng-template>
       </div>
+      <ng-template #indisponivel>
+        <div class="chat-notification"><b>Indisponivel</b></div>
+      </ng-template>
     </div>
   </div>
 </section>
